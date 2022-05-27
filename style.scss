@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(218, 23%, 16%);
+  font-family: 'Manrope', sans-serif;
+}
+
+.container {
+  width: 30em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0 2em;
+  justify-content: center;
+  .box {
+    min-height: 10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: hsl(217, 19%, 24%) ;
+    border-radius: 0.8em;
+    text-align: center;
+    position: relative;
+    padding: 2em 2em;
+
+    h5 {
+      color: hsl(150, 100%, 66%);
+      font-size: 0.8em;
+      text-transform: uppercase;
+      letter-spacing: 3px ;
+      margin-top: 2em;
+    }
+
+    #adcontent{
+      font-size: 2em;
+      font-weight: bold;
+      color: hsl(193, 38%, 86%);
+      margin-top: 1em;
+    }
+
+    .line{
+      margin-top: 2em;
+      background-image: url(./images/pattern-divider-mobile.svg);
+      height: 1em;
+      margin-bottom: 3em;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      @media (min-width: 400px){
+        background-image: url(./images/pattern-divider-desktop.svg);
+      }
+
+      width: 100%;
+
+    }
+      .dice {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        background-color: hsl(150, 100%, 66%);
+        width: 5em;
+        height: 5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        transform: translate(-50%,50%);
+        cursor: pointer;
+        &:hover {
+          box-shadow: 0 0 50px 1px hsl(150, 100%, 66%),0 0 3px 1px hsl(150, 100%, 66%),;
+        }
+        img {
+          width: 1.8em;
+        }
+      }
+    }
+  }
+
+  .wait {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 2em;
+    visibility: hidden;
+    &.ative {
+      visibility: visible;
+    }
+  }
